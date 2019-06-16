@@ -1,0 +1,14 @@
+    {
+        "profileFollowButtonLabel": "Follow",
+        "profileSetStatusLabel": "Set status",
+        "repoFindTextLabel": "Find repositories",
+        "repoFilterLangugeLabel": "Language",
+        "repoFilterTypeLabel": "Type",
+        "repoFilterResMessage": " repositories found.",
+        "tabBarItemOverview": "Overview",
+        "tabBarItemRepos": "Repos",
+        "tabBarItemProjects": "Projects",
+        "tabBarItemStars": "Stars",
+        "tabBarItemFollowers": "Followers",
+        "tabBarItemFollowing": "Following"
+    }
