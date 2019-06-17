@@ -1,7 +1,7 @@
     {
         "profileFollowButtonLabel": "Follow",
         "profileSetStatusLabel": "Set status",
-        "repoFindTextLabel": "Find repositories",
+        "repoFindTextLabel": "Find repositories...",
         "repoFilterLangugeLabel": "Language",
         "repoFilterTypeLabel": "Type",
         "repoFilterResMessage": " repositories found.",

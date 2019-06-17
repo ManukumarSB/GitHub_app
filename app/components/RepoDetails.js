@@ -9,7 +9,8 @@ const RepoDetails = ({ repoEntry }) => {
         repoContentStyle,
         repoDescriptionStyle,
         repoNameStyle,
-        repoSubContentStyle
+        repoSubContentStyle,
+        updateTimeStyle
     } = styles;
 
     Moment.locale('en');
@@ -23,7 +24,7 @@ const RepoDetails = ({ repoEntry }) => {
                 <View style={repoSubContentStyle}>
                     <Text>{language}</Text>
                     <Text>{license == null ? " " : repoEntry.license.spdx_id}</Text>
-                    <Text>Updated on {Moment(date).format('MMM DD YYYY')}</Text>
+                    <Text style={updateTimeStyle}>Updated on {Moment(date).format('MMM DD YYYY')}</Text>
                 </View>
             </View>
         </Card>
@@ -33,18 +34,26 @@ const RepoDetails = ({ repoEntry }) => {
 const styles = {
     repoContentStyle: {
         flexDirection: 'column',
-        justifyContent: 'space-around',
+        justifyContent: 'space-between',
     },
     repoNameStyle: {
         fontWeight: "bold",
-        color: 'black'
+        color: 'black',
+        paddingLeft:5
     },
     repoDescriptionStyle: {
-        padding: 10
+        padding: 10,
+        color: 'black',
     },
     repoSubContentStyle: {
         flexDirection: 'row',
+        padding:5,
+        color: 'black',
         justifyContent: 'space-between',
+    },
+    updateTimeStyle:{
+        padding:5,
+        color: 'black',
     }
 };
 

@@ -8,7 +8,7 @@ export default class ProfileDetails extends Component {
 
     render() {
         return (
-            <View style={{ flexDirection: this.props.orientaion === 'portrait' ? 'row' : 'column' }}>
+            <View style={{ flexDirection: this.props.orientaion === 'portrait' ? 'row' : 'column', padding: 5 }}>
                 <View style={styles.imageViewStyle}>
                     <Card>
                         <Image
@@ -25,7 +25,7 @@ export default class ProfileDetails extends Component {
                     </Card>
                 </View>
                 <View style={styles.profileTextArea}>
-                    <Text style={styles.serNameStyle}> {this.props.profileData.name}</Text>
+                    <Text style={styles.userNameStyle}> {this.props.profileData.name}</Text>
                     <Text style> {this.props.profileData.login}</Text>
                     <Card>
                         <Text style={{ paddingHorizontal: 15 }}>{localisationData.profileFollowButtonLabel}</Text>
@@ -59,6 +59,9 @@ const styles = StyleSheet.create({
     },
     imageViewStyle: {
         flex: 3,
+        borderRadius: 50,
+        borderWidth: 1,
+        borderColor: '#fff',
         alignItems: 'flex-start',
     },
     imageStyle: {
@@ -69,7 +72,9 @@ const styles = StyleSheet.create({
         flexDirection: 'row'
     },
     userNameStyle: {
-        fontSize: 20, color: '#000000'
+        fontSize: 20,
+        color: '#000000',
+        paddingTop: 5
     },
     detailsStyle: {
         flexDirection: 'row', margin: 5

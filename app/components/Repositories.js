@@ -106,6 +106,7 @@ class Repositories extends Component {
                 data={availLangList}
                 onChangeText={this.onSelectLang.bind(this)}
                 value={this.state.reposFilterLangDefault}
+                containerStyle={styles.dropBoxStyle}
             />
         )
     }
@@ -117,6 +118,7 @@ class Repositories extends Component {
                 data={this.state.availTypeList}
                 onChangeText={this.onSelectType.bind(this)}
                 value={this.state.reposFilterTypeDefault}
+                containerStyle={styles.dropBoxStyle}
             />
         )
     }
@@ -131,13 +133,19 @@ class Repositories extends Component {
         return (
             <View style={styles.filtersStyle}>
                 <View style={styles.filterViewStyle}>
-                    <Card>
-                        <TextInput
-                            placeholderTextColor="grey"
-                            defaultValue={this.state.reposFilterSearchText}
-                            onChangeText={this.setSearchText.bind(this)}
-                            placeholder={localisationData.repoFindTextLabel} />
-                    </Card>
+                    <TextInput
+                        placeholderTextColor="grey"
+                        style={{
+                            backgroundColor: '#E5E1F4',
+                            borderRadius: 20,
+                            borderColor: 'black',
+                            borderWidth: 2,
+                            padding: 5,
+                            marginTop:5
+                        }}
+                        defaultValue={this.state.reposFilterSearchText}
+                        onChangeText={this.setSearchText.bind(this)}
+                        placeholder={localisationData.repoFindTextLabel} />
                     <View style={styles.filtersDropDownStyle}>
                         <View style={styles.dropDown}>
                             {this.reposLangDropdownMenuItems()}
@@ -147,7 +155,7 @@ class Repositories extends Component {
                         </View>
                     </View>
                 </View>
-                <Text>{this.state.reposSearchResMessage}</Text>
+                <Text style={{ padding: 5, color: 'blue' }}>{this.state.reposSearchResMessage}</Text>
                 <ScrollView contentContainerStyle={styles.contentContainer}>
                     {this.renderRepoList()}
                 </ScrollView>
@@ -159,7 +167,8 @@ class Repositories extends Component {
 const styles = {
     dropDown: {
         flex: 1,
-        borderWidth: 1
+        padding: 5,
+
     },
     contentContainer: {
         justifyContent: 'space-between',
@@ -171,12 +180,17 @@ const styles = {
         flexDirection: 'column'
     },
     filtersDropDownStyle: {
-        flexDirection: 'row'
+        flexDirection: 'row',
     },
     ActivityIndicator: {
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center'
+    },
+    dropBoxStyle: {
+        // borderWidth: 1,
+        height: 60,
+        backgroundColor: '#E5E1F4'
     }
 }
 

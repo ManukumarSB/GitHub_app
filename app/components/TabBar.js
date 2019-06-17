@@ -1,4 +1,4 @@
-import { createBottomTabNavigator } from 'react-navigation';
+import { createMaterialTopTabNavigator } from 'react-navigation';
 import Repositories from './Repositories';
 import * as localisationData from '../GlobalStrings.json';
 import Overview from './Overview';
@@ -7,26 +7,26 @@ import Stars from './Stars';
 import Followers from './Followers';
 import Following from './Following';
 
-const TabBar = createBottomTabNavigator({
+const TabBar = createMaterialTopTabNavigator({
     Overview: Overview,
     Repositories: Repositories,
     Projects: Projects,
     Stars: Stars,
     Followers: Followers,
-    Following: Following,
-
 },
     {
         tabBarOptions: {
             activeTintColor: 'black',
-            inactiveTintColor: 'white',
-            inactiveBackgroundColor: 'grey',
+            // inactiveTintColor: 'white',
+            inactiveBackgroundColor: 'white',
+            upperCaseLabel:false,
             labelStyle: {
                 fontSize: 12,
-                marginBottom: 15
+                // marginBottom: 15
             },
             style: {
-                backgroundColor: 'white',
+                backgroundColor: 'grey',
+                height: '10%'
             },
         },
     });
