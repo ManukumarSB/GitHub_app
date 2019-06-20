@@ -38,22 +38,19 @@ const styles = {
     },
     repoNameStyle: {
         fontWeight: "bold",
-        color: 'black',
-        paddingLeft:5
+        color: 'blue',
+        paddingLeft: 5
     },
     repoDescriptionStyle: {
         padding: 10,
-        color: 'black',
     },
     repoSubContentStyle: {
         flexDirection: 'row',
-        padding:5,
-        color: 'black',
+        padding: 5,
         justifyContent: 'space-between',
     },
-    updateTimeStyle:{
-        padding:5,
-        color: 'black',
+    updateTimeStyle: {
+        padding: 5,
     }
 };
 

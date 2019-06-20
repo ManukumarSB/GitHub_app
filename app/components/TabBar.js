@@ -17,15 +17,16 @@ const TabBar = createMaterialTopTabNavigator({
     {
         tabBarOptions: {
             activeTintColor: 'black',
-            // inactiveTintColor: 'white',
-            inactiveBackgroundColor: 'white',
+            inactiveTintColor: 'grey',
+            allowFontScaling: true,
+            inactiveBackgroundColor: 'black',
             upperCaseLabel:false,
             labelStyle: {
                 fontSize: 12,
                 // marginBottom: 15
             },
             style: {
-                backgroundColor: 'grey',
+                backgroundColor: '#E1E7F2',
                 height: '10%'
             },
         },

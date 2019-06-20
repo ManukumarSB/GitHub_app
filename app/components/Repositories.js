@@ -155,7 +155,7 @@ class Repositories extends Component {
                         </View>
                     </View>
                 </View>
-                <Text style={{ padding: 5, color: 'blue' }}>{this.state.reposSearchResMessage}</Text>
+                <Text style={{ padding: 5, color: 'black' }}>{this.state.reposSearchResMessage}</Text>
                 <ScrollView contentContainerStyle={styles.contentContainer}>
                     {this.renderRepoList()}
                 </ScrollView>

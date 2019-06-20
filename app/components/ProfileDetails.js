@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, Dimensions, Image } from 'react-native';
+import { StyleSheet, Text, View, Dimensions, Image, Button } from 'react-native';
 import { Card } from './common';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import * as localisationData from '../GlobalStrings.json';
@@ -10,7 +10,6 @@ export default class ProfileDetails extends Component {
         return (
             <View style={{ flexDirection: this.props.orientaion === 'portrait' ? 'row' : 'column', padding: 5 }}>
                 <View style={styles.imageViewStyle}>
-                    <Card>
                         <Image
                             style={styles.imageStyle}
                             source={{
@@ -21,15 +20,10 @@ export default class ProfileDetails extends Component {
                             <Icon name="edit" size={15} color="#900" />
                             <Text>{localisationData.profileSetStatusLabel}</Text>
                         </View>
-
-                    </Card>
                 </View>
                 <View style={styles.profileTextArea}>
                     <Text style={styles.userNameStyle}> {this.props.profileData.name}</Text>
                     <Text style> {this.props.profileData.login}</Text>
-                    <Card>
-                        <Text style={{ paddingHorizontal: 15 }}>{localisationData.profileFollowButtonLabel}</Text>
-                    </Card>
                     <View style={styles.detailsStyle}>
                         <Icon name="people" size={15} color="#900" />
                         <Text>{this.props.profileData.company}</Text>
@@ -39,12 +33,18 @@ export default class ProfileDetails extends Component {
                         <Icon name="location-on" size={15} color="#900" />
                         <Text>{this.props.profileData.location}</Text>
                     </View>
-                    <View style={styles.detailsStyle}>
-                        <Icon name="mail" size={15} color="#900" />
-                        <Text>{this.props.profileData.email}</Text>
+                    {/* <View style={styles.detailsStyle}>
+                            <Icon name="mail" size={15} color="#900" />
+                            <Text>{this.props.profileData.email}</Text>
+
+                        </View> */}
+                    <View style={[{ width: "90%" }]}>
+                        <Button
+                            title={localisationData.profileFollowButtonLabel}
+                            color="#03A9F4"
+                        />
                     </View>
                 </View>
-
             </View>
         );
     }
@@ -54,6 +54,7 @@ const styles = StyleSheet.create({
     profileTextArea: {
         flexDirection: 'column',
         alignItems: 'flex-start',
+        padding: 10,
         height: Dimensions.get('window').width * 0.4,
         width: Dimensions.get('window').width * 0.5,
     },
@@ -65,11 +66,13 @@ const styles = StyleSheet.create({
         alignItems: 'flex-start',
     },
     imageStyle: {
+        borderRadius: 100,
         width: Dimensions.get('window').width * 0.4,
         height: Dimensions.get('window').width * 0.4,
     },
     statusEditStyle: {
-        flexDirection: 'row'
+        flexDirection: 'row',
+        paddingLeft:20
     },
     userNameStyle: {
         fontSize: 20,
@@ -77,6 +80,7 @@ const styles = StyleSheet.create({
         paddingTop: 5
     },
     detailsStyle: {
-        flexDirection: 'row', margin: 5
+        flexDirection: 'row',
+        margin: 5
     },
 });
